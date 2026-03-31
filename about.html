@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Carmel Garden Matriculation Higher Secondary School</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-inner">
+            <div class="contact-info">
+                <span><i class="fa-solid fa-phone"></i> +91 82200 59980</span>
+                <span><i class="fa-solid fa-envelope"></i> admin@carmelgarden.edu.in</span>
+            </div>
+            <div class="top-links">
+                <a href="alumni.html">Our Alumni</a>
+                <a href="news.html">News</a>
+                <a href="#faq">FAQ</a>
+                <a href="admin.html" class="login-btn">Admin Login <i class="fa-solid fa-lock"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar">
+        <div class="container nav-inner">
+            <div class="logo">
+                <a href="index.html" style="display: flex; align-items: center; gap: 10px;">
+                    <img src="images/logo.jpeg" alt="Logo" style="height: 40px;">
+                    <h1 id="cms-brand-name">Carmel Garden</h1>
+                </a>
+            </div>
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="about.html" class="active">About Us <i class="fa-solid fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="about.html#vision">Vision & Mission</a></li>
+                        <li><a href="about.html#message">Correspondent&Principal Desk</a></li>
+                        <li><a href="about.html#history">History</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="academics.html">Academics <i class="fa-solid fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="academics.html#montessori">Montessori Method</a></li>
+                        <li><a href="academics.html#pedagogy">Pedagogy</a></li>
+                    </ul>
+                </li>
+                <li><a href="facilities.html">Facilities</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="alumni.html">Proud Alumni</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="apply.html" class="btn btn-primary">Apply Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 100vh Hero Section -->
+    <div class="page-hero" style="background-image: url('images/campus.jpg');">
+        <div class="page-hero-content fade-up-element visible">
+            <h1 class="page-hero-title">About Us</h1>
+            <p class="page-hero-subtitle">Tradition of Truth and Service</p>
+        </div>
+    </div>
+
+    <!-- ══ WELCOME / PRINCIPAL ════════════════════════════════════ -->
+    <section class="principal-sec" id="message">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="sec-tag">Our Leadership</span>
+                <h2 class="sec-title">Welcome to Carmel Garden<br>Matric Higher Secondary School</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-xl-10 fade-up-element">
+                    <div class="principal-card">
+                        <div class="principal-profile-wrapper">
+                            <div class="principal-img-container">
+                                <img src="images/Rev.Fr.P.Arokia Thadayus.jpg" alt="Correspondent & Principal" class="principal-img">
+                            </div>
+                            <div class="principal-name-bar">
+                                <h5>Rev. Fr. Dr. P. AROKIA THADAYUS</h5>
+                                <span>Correspondent & Principal</span>
+                            </div>
+                        </div>
+                        <div class="principal-content">
+                            <i class="fa-solid fa-quote-left quote-icon"></i>
+                            <p>My dear Students, Education is the most powerful weapon which you can use to change the world. At Carmel Garden, we believe that true education goes beyond textbooks — it is about nurturing the whole person: mind, body, and spirit. Rooted in the Carmelite tradition of Truth and Service, we strive to create an environment where every student is encouraged to dream big, work hard, and serve others with love.</p>
+                            <p class="mt-3">Our dedicated faculty, state-of-the-art facilities and value-based curriculum ensure that each child receives personalised attention and emerges as a confident, compassionate and capable individual ready to face the challenges of tomorrow. I welcome you to Carmel Garden — a place where every child truly matters.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ MOTTO ══════════════════════════════════════════════════ -->
+    <section class="motto-sec" id="vision">
+        <div class="container text-center">
+            <span class="sec-tag" style="background:rgba(255,255,255,.15); color:var(--pink);">Our Foundation</span>
+            <h2 class="sec-title text-white mt-2">Vision & Mission</h2>
+            <p class="text-white mb-4" style="opacity:.75;">The Motto of our School is <strong>"TRUTH AND SERVICE"</strong></p>
+            <div class="row g-4 justify-content-center" style="display: flex; flex-wrap: wrap; gap: 30px;">
+                <div class="col-md-4 fade-up-element" style="flex: 1; min-width: 280px;">
+                    <div class="motto-card text-center" style="height: 100%;">
+                        <div class="motto-icon"><i class="fa-solid fa-cross"></i></div>
+                        <h4 style="color:#fff;">Truth</h4>
+                        <p style="color:rgba(255,255,255,0.7);">Truth is the foundation of all knowledge and learning. We cultivate honesty, integrity and transparency in every student so they may navigate life with clarity and conviction.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 fade-up-element" style="flex: 1; min-width: 280px;">
+                    <div class="motto-card text-center" style="height: 100%;">
+                        <div class="motto-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+                        <h4 style="color:#fff;">Service</h4>
+                        <p style="color:rgba(255,255,255,0.7);">Service is the highest expression of love. We inspire our students to dedicate their talents and knowledge to the betterment of their community, nation and the world.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 fade-up-element" style="flex: 1; min-width: 280px;">
+                    <div class="motto-card text-center" style="height: 100%;">
+                        <div class="motto-icon"><i class="fa-solid fa-star"></i></div>
+                        <h4 style="color:#fff;">Excellence</h4>
+                        <p style="color:rgba(255,255,255,0.7);">We pursue excellence in every sphere — academic, co-curricular and character — believing that every child holds the potential for greatness within them.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ ANTHEM ═════════════════════════════════════════════════ -->
+    <section class="anthem-sec section" id="anthem" style="padding: 80px 0;">
+        <div class="container">
+            <div class="text-center mb-5 fade-up-element">
+                <span class="sec-tag">Our Pride</span>
+                <h2 class="sec-title">Carmel Anthem</h2>
+                <div class="divider"></div>
+            </div>
+            
+            <div class="row g-5 align-items-center">
+                <!-- Left: Lyrics & Audio -->
+                <div class="col-lg-6 col-md-12 fade-up-element">
+                    <div class="lyrics-card">
+                        <p class="anthem-lyrics">
+                            Hail, Carmel Garden, home of truth and light,<br>
+                            Where minds are nurtured, striving for the right.<br>
+                            With faith and courage, we will march ahead,<br>
+                            In steps of glory where our leaders tread.<br><br>
+                            
+                            Truth and Service, our guiding star,<br>
+                            Shining brightly, both near and far.<br>
+                            We pledge our loyalty, our hearts so true,<br>
+                            Carmel Garden, all hail to you!
+                        </p>
+                        
+                        <div class="audio-player-wrapper mt-4">
+                            <h6>Listen to our Anthem</h6>
+                            <audio controls>
+                                <source src="sample-anthem.mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right: Image -->
+                <div class="col-lg-6 col-md-12 fade-up-element" style="transition-delay: 0.2s;">
+                    <div class="anthem-img-wrapper">
+                        <img src="images/campus.jpg" alt="Carmel Anthem Students Singing">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row g-4" style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: space-between;">
+                <div class="col-lg-4 footer-brand" style="flex: 1; min-width: 250px;">
+                    <h2>Carmel Garden<span style="color:var(--pink);">.</span></h2>
+                    <p class="mt-2" style="font-size: 0.9rem; color: rgba(255,255,255,0.7); line-height: 1.8;">To be a premier school with a joyful, vibrant, caring community of innovative students, effective teachers and supportive parents — guided by Truth and Service.</p>
+                </div>
+                <div class="col-lg-3 footer-col" style="min-width: 200px;">
+                    <h4 style="color:#fff; margin-bottom: 20px; font-family:'Playfair Display', serif;">School Timings</h4>
+                    <div style="margin-bottom: 10px; color: rgba(255,255,255,0.7); font-size:0.9rem;"><i class="fa-solid fa-sun" style="color:#FFB300; margin-right: 8px;"></i> Morning : 8:30 AM to 12:00 PM</div>
+                    <div style="margin-bottom: 10px; color: rgba(255,255,255,0.7); font-size:0.9rem;"><i class="fa-solid fa-utensils" style="color:#FFB300; margin-right: 8px;"></i> Lunch : 12:00 PM to 12:30 PM</div>
+                    <div style="color: rgba(255,255,255,0.7); font-size:0.9rem;"><i class="fa-solid fa-moon" style="color:#FFB300; margin-right: 8px;"></i> Afternoon : 12:30 PM to 3:20 PM</div>
+                </div>
+                <div class="col-lg-3 footer-col" style="min-width: 200px;">
+                    <h4 style="color:#fff; margin-bottom: 20px; font-family:'Playfair Display', serif;">Contact Us</h4>
+                    <div style="margin-bottom: 10px; color: rgba(255,255,255,0.7); font-size:0.9rem;"><i class="fa-solid fa-phone" style="width:20px;"></i> +91 98765 43210</div>
+                    <div style="margin-bottom: 10px; color: rgba(255,255,255,0.7); font-size:0.9rem;"><i class="fa-solid fa-envelope" style="width:20px;"></i> info@carmelgarden.edu.in</div>
+                    <div style="color: rgba(255,255,255,0.7); font-size:0.9rem;"><i class="fa-solid fa-location-dot" style="width:20px;"></i> Coimbatore, Tamil Nadu</div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom" style="border-top: 1px solid rgba(255,255,255,0.1); margin-top: 40px; padding-top: 20px;">
+            <div class="container" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap:10px; color: rgba(255,255,255,0.5); font-size: 0.85rem;">
+                <span>© 2025 Carmel Garden MHSS. All Rights Reserved.</span>
+                <span>Crafted with ❤️ for Carmel Garden</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>

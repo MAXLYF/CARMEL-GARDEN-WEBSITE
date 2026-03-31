@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply Now - Carmel Garden Matriculation Higher Secondary School</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .apply-container {
+            max-width: 800px;
+            margin: -60px auto 100px;
+            position: relative;
+            z-index: 10;
+        }
+        .apply-card {
+            background: #fff;
+            border-radius: var(--border-radius-lg);
+            padding: 50px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        .apply-card select {
+            width: 100%; padding: 12px 16px;
+            border: 2px solid #e8e0f0; border-radius: 10px;
+            font-family: inherit; font-size: 0.87rem;
+            margin-bottom: 15px; outline: none;
+            transition: 0.2s; background: #fff;
+            color: var(--text-muted);
+            appearance: none;
+        }
+        .apply-card select:focus {
+            border-color: var(--pink);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-inner">
+            <div class="contact-info">
+                <span><i class="fa-solid fa-phone"></i> +91 82200 59980</span>
+                <span><i class="fa-solid fa-envelope"></i> admin@carmelgarden.edu.in</span>
+            </div>
+            <div class="top-links">
+                <a href="alumni.html">Our Alumni</a>
+                <a href="news.html">News</a>
+                <a href="about.html#faq">FAQ</a>
+                <a href="admin.html" class="login-btn">Admin Login <i class="fa-solid fa-lock"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar">
+        <div class="container nav-inner">
+            <div class="logo">
+                <a href="index.html" style="display: flex; align-items: center; gap: 10px;">
+                    <img src="images/logo.jpeg" alt="Logo" style="height: 40px;">
+                    <h1 id="cms-brand-name">Carmel Garden</h1>
+                </a>
+            </div>
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="about.html">About Us <i class="fa-solid fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="about.html#vision">Vision & Mission</a></li>
+                        <li><a href="about.html#message">Correspondent&Principal Desk</a></li>
+                        <li><a href="about.html#history">History</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="academics.html">Academics <i class="fa-solid fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="academics.html#montessori">Montessori Method</a></li>
+                        <li><a href="academics.html#pedagogy">Pedagogy</a></li>
+                    </ul>
+                </li>
+                <li><a href="facilities.html">Facilities</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="alumni.html">Proud Alumni</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="apply.html" class="btn btn-primary active">Apply Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 100vh Hero Section -->
+    <div class="page-hero" style="background-image: url('images/kids.jpg');">
+        <div class="page-hero-content fade-up-element visible">
+            <h1 class="page-hero-title">Admissions</h1>
+            <p class="page-hero-subtitle">Begin Your Journey With Us</p>
+        </div>
+    </div>
+
+    <!-- Application Form -->
+    <section style="padding: 0; background: var(--light);">
+        <div class="container">
+            <div class="apply-container fade-up-element">
+                <div class="apply-card form-card">
+                    <div class="text-center mb-5">
+                        <h4 style="font-family:'Playfair Display',serif; color:var(--dark); font-size: 1.8rem;">Application Form</h4>
+                        <p style="color:var(--grey); font-size:0.9rem;">Fill out the form below to apply for the upcoming academic year.</p>
+                        <div class="divider"></div>
+                    </div>
+                    
+                    <form onsubmit="event.preventDefault(); alert('Application Submitted Successfully! Our team will contact you shortly.'); this.reset();">
+                        <div class="row g-0">
+                            <div class="col-md-6 pe-md-2" style="display:inline-block; width:49%;">
+                                <input type="text" placeholder="First Name" required />
+                            </div>
+                            <div class="col-md-6 ps-md-2" style="display:inline-block; width:50%;">
+                                <input type="text" placeholder="Last Name" required />
+                            </div>
+                        </div>
+                        <input type="email" placeholder="Email Address" required />
+                        <input type="tel" placeholder="Mobile Number" required />
+                        
+                        <!-- Course Dropdown -->
+                        <div style="position: relative;">
+                            <select required>
+                                <option value="" disabled selected>Select Grade / Course applying for</option>
+                                <option value="pre-kg">Pre-KG</option>
+                                <option value="lkg">LKG</option>
+                                <option value="ukg">UKG</option>
+                                <option value="primary">Primary (Grade 1 - 5)</option>
+                                <option value="middle">Middle School (Grade 6 - 8)</option>
+                                <option value="high">High School (Grade 9 - 10)</option>
+                                <option value="higher-sec">Higher Secondary (Grade 11 - 12)</option>
+                            </select>
+                            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 15px; top: 15px; color: var(--grey); pointer-events: none; font-size: 0.8rem;"></i>
+                        </div>
+                        
+                        <button type="submit" style="margin-top: 10px;">Submit Application &nbsp;<i class="fa-solid fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Info Section -->
+    <section class="enquiry-sec" id="contact" style="padding-top: 20px;">
+        <div class="container">
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-8 fade-up-element">
+                    <div class="contact-card" style="box-shadow: 0 10px 40px rgba(0,0,0,0.15);">
+                        <h3 class="text-center">Contact Info</h3>
+                        <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-around; margin-top: 30px;">
+                            <div class="c-item" style="flex-direction: column; align-items: center; text-align: center;">
+                                <div class="c-ico"><i class="fa-solid fa-location-dot"></i></div>
+                                <div><strong>Address</strong><span style="display:block; margin-top:8px;">Carmel Garden MHSS,<br>Coimbatore, Tamil Nadu</span></div>
+                            </div>
+                            <div class="c-item" style="flex-direction: column; align-items: center; text-align: center;">
+                                <div class="c-ico"><i class="fa-solid fa-phone"></i></div>
+                                <div><strong>Phone</strong><span style="display:block; margin-top:8px;">+91 98765 43210</span></div>
+                            </div>
+                            <div class="c-item" style="flex-direction: column; align-items: center; text-align: center;">
+                                <div class="c-ico"><i class="fa-solid fa-envelope"></i></div>
+                                <div><strong>Email</strong><span style="display:block; margin-top:8px;">info@carmelgarden.edu.in</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row g-4" style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: space-between;">
+                <div class="col-lg-4 footer-brand" style="flex: 1; min-width: 250px;">
+                    <h2>Carmel Garden<span style="color:var(--pink);">.</span></h2>
+                    <p class="mt-2" style="font-size: 0.9rem; color: rgba(255,255,255,0.7); line-height: 1.8;">To be a premier school with a joyful, vibrant, caring community of innovative students, effective teachers and supportive parents — guided by Truth and Service.</p>
+                </div>
+                <div class="col-lg-3 footer-col" style="min-width: 200px;">
+                    <h4 style="color:#fff; margin-bottom: 20px; font-family:'Playfair Display', serif;">School Timings</h4>
+                    <div style="margin-bottom: 10px; color: rgba(255,255,255,0.7); font-size:0.9rem;"><i class="fa-solid fa-sun" style="color:#FFB300; margin-right: 8px;"></i> Morning : 8:30 AM to 12:00 PM</div>
+                    <div style="margin-bottom: 10px; color: rgba(255,255,255,0.7); font-size:0.9rem;"><i class="fa-solid fa-utensils" style="color:#FFB300; margin-right: 8px;"></i> Lunch : 12:00 PM to 12:30 PM</div>
+                    <div style="color: rgba(255,255,255,0.7); font-size:0.9rem;"><i class="fa-solid fa-moon" style="color:#FFB300; margin-right: 8px;"></i> Afternoon : 12:30 PM to 3:20 PM</div>
+                </div>
+                <div class="col-lg-3 footer-col" style="min-width: 200px;">
+                    <h4 style="color:#fff; margin-bottom: 20px; font-family:'Playfair Display', serif;">Contact Us</h4>
+                    <div style="margin-bottom: 10px; color: rgba(255,255,255,0.7); font-size:0.9rem;"><i class="fa-solid fa-phone" style="width:20px;"></i> +91 98765 43210</div>
+                    <div style="margin-bottom: 10px; color: rgba(255,255,255,0.7); font-size:0.9rem;"><i class="fa-solid fa-envelope" style="width:20px;"></i> info@carmelgarden.edu.in</div>
+                    <div style="color: rgba(255,255,255,0.7); font-size:0.9rem;"><i class="fa-solid fa-location-dot" style="width:20px;"></i> Coimbatore, Tamil Nadu</div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom" style="border-top: 1px solid rgba(255,255,255,0.1); margin-top: 40px; padding-top: 20px;">
+            <div class="container" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap:10px; color: rgba(255,255,255,0.5); font-size: 0.85rem;">
+                <span>© 2025 Carmel Garden MHSS. All Rights Reserved.</span>
+                <span>Crafted with ❤️ for Carmel Garden</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Carmel Garden Matriculation Higher Secondary School</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-inner">
+            <div class="contact-info">
+                <span><i class="fa-solid fa-phone"></i> +91 82200 59980</span>
+                <span><i class="fa-solid fa-envelope"></i> admin@carmelgarden.edu.in</span>
+            </div>
+            <div class="top-links">
+                <a href="alumni.html">Our Alumni</a>
+                <a href="news.html">News</a>
+                <a href="about.html#faq">FAQ</a>
+                <a href="admin.html" class="login-btn">Admin Login <i class="fa-solid fa-lock"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar">
+        <div class="container nav-inner">
+            <div class="logo">
+                <a href="index.html" style="display: flex; align-items: center; gap: 10px;">
+                    <img src="images/logo.jpeg" alt="Logo" style="height: 40px;">
+                    <h1 id="cms-brand-name">Carmel Garden</h1>
+                </a>
+            </div>
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="about.html">About Us <i class="fa-solid fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="about.html#vision">Vision & Mission</a></li>
+                        <li><a href="about.html#message">Correspondent&Principal Desk</a></li>
+                        <li><a href="about.html#history">History</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="academics.html">Academics <i class="fa-solid fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="academics.html#montessori">Montessori Method</a></li>
+                        <li><a href="academics.html#pedagogy">Pedagogy</a></li>
+                    </ul>
+                </li>
+                <li><a href="facilities.html">Facilities</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li><a href="alumni.html">Proud Alumni</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="apply.html" class="btn btn-primary">Apply Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 100vh Hero Section -->
+    <div class="page-hero" style="background-image: url('images/gallery-hero.png'); background-color: var(--dark);">
+        <div class="page-hero-content fade-up-element visible">
+            <h1 class="page-hero-title">Gallery</h1>
+            <p class="page-hero-subtitle">Moments to Cherish</p>
+        </div>
+    </div>
+
+    <!-- Gallery Section -->
+    <section class="gallery-sec" style="padding-top: 60px; padding-bottom: 80px; min-height: 70vh;">
+        <div class="container">
+
+            <!-- Folders View -->
+            <div id="gallery-folders" class="gallery-folder-grid">
+                <div style="text-align:center; width: 100%; padding: 50px;">
+                    <p style="color:var(--grey);">Loading gallery events...</p>
+                </div>
+            </div>
+
+            <!-- Photos View (Hidden by default) -->
+            <div id="gallery-photos" class="hidden">
+                <div class="gallery-header-row mb-4">
+                    <button class="back-btn" onclick="closeFolder()"><i class="fa-solid fa-arrow-left"></i> Back to Folders</button>
+                    <h3 id="current-event-title" style="margin:0; font-family:'Playfair Display', serif; color:var(--dark);">Event Name</h3>
+                </div>
+                <div id="photos-grid" class="photos-grid">
+                    <!-- Photos injected here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox hidden" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="Full Screen Image" onclick="event.stopPropagation()">
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row g-4" style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: space-between;">
+                <div class="col-lg-4 footer-brand" style="flex: 1; min-width: 250px;">
+                    <h2>Carmel Garden<span style="color:var(--pink);">.</span></h2>
+                    <p class="mt-2" style="font-size: 0.9rem; color: rgba(255,255,255,0.7); line-height: 1.8;">To be a premier school with a joyful, vibrant, caring community of innovative students, effective teachers and supportive parents — guided by Truth and Service.</p>
+                </div>
+                <div class="col-lg-3 footer-col" style="min-width: 200px;">
+                    <h4 style="color:#fff; margin-bottom: 20px; font-family:'Playfair Display', serif;">School Timings</h4>
+                    <div style="margin-bottom: 10px; color: rgba(255,255,255,0.7); font-size:0.9rem;"><i class="fa-solid fa-sun" style="color:#FFB300; margin-right: 8px;"></i> Morning : 8:30 AM to 12:00 PM</div>
+                    <div style="margin-bottom: 10px; color: rgba(255,255,255,0.7); font-size:0.9rem;"><i class="fa-solid fa-utensils" style="color:#FFB300; margin-right: 8px;"></i> Lunch : 12:00 PM to 12:30 PM</div>
+                    <div style="color: rgba(255,255,255,0.7); font-size:0.9rem;"><i class="fa-solid fa-moon" style="color:#FFB300; margin-right: 8px;"></i> Afternoon : 12:30 PM to 3:20 PM</div>
+                </div>
+                <div class="col-lg-3 footer-col" style="min-width: 200px;">
+                    <h4 style="color:#fff; margin-bottom: 20px; font-family:'Playfair Display', serif;">Contact Us</h4>
+                    <div style="margin-bottom: 10px; color: rgba(255,255,255,0.7); font-size:0.9rem;"><i class="fa-solid fa-phone" style="width:20px;"></i> +91 98765 43210</div>
+                    <div style="margin-bottom: 10px; color: rgba(255,255,255,0.7); font-size:0.9rem;"><i class="fa-solid fa-envelope" style="width:20px;"></i> info@carmelgarden.edu.in</div>
+                    <div style="color: rgba(255,255,255,0.7); font-size:0.9rem;"><i class="fa-solid fa-location-dot" style="width:20px;"></i> Coimbatore, Tamil Nadu</div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom" style="border-top: 1px solid rgba(255,255,255,0.1); margin-top: 40px; padding-top: 20px;">
+            <div class="container" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap:10px; color: rgba(255,255,255,0.5); font-size: 0.85rem;">
+                <span>© 2025 Carmel Garden MHSS. All Rights Reserved.</span>
+                <span>Crafted with ❤️ for Carmel Garden</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script>
+        let galleryData = {};
+
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('/api/content')
+                .then(res => res.json())
+                .then(data => {
+                    galleryData = data.gallery || {};
+                    renderFolders();
+                })
+                .catch(err => {
+                    console.error("Error loading gallery data:", err);
+                    document.getElementById('gallery-folders').innerHTML = '<p class="error-msg">Failed to load gallery events.</p>';
+                });
+        });
+
+        function renderFolders() {
+            const foldersContainer = document.getElementById('gallery-folders');
+            foldersContainer.innerHTML = '';
+            const events = Object.keys(galleryData);
+
+            if(events.length === 0) {
+                foldersContainer.innerHTML = '<div style="width: 100%; text-align: center; color: #666; font-size: 1.1rem; grid-column: 1 / -1;">No gallery events available yet.</div>';
+                return;
+            }
+
+            events.forEach(eventName => {
+                const photos = galleryData[eventName];
+                const coverImage = photos.length > 0 ? photos[0] : 'images/placeholder.jpg'; // use first image as cover
+                
+                const card = document.createElement('div');
+                card.className = 'folder-card fade-up-element visible';
+                card.onclick = () => openFolder(eventName);
+                card.innerHTML = `
+                    <div class="folder-cover" style="background-image: url('${coverImage}')">
+                        <div class="folder-overlay">
+                            <i class="fa-regular fa-images"></i>
+                            <span>${photos.length} Photo${photos.length !== 1 ? 's' : ''}</span>
+                        </div>
+                    </div>
+                    <div class="folder-title">
+                        <h4>${eventName}</h4>
+                    </div>
+                `;
+                foldersContainer.appendChild(card);
+            });
+        }
+
+        function openFolder(eventName) {
+            document.getElementById('gallery-folders').classList.add('hidden');
+            
+            const photosSection = document.getElementById('gallery-photos');
+            photosSection.classList.remove('hidden');
+            // Small transition trick
+            photosSection.style.opacity = '0';
+            setTimeout(() => photosSection.style.opacity = '1', 50);
+
+            document.getElementById('current-event-title').innerText = eventName;
+            
+            const photosContainer = document.getElementById('photos-grid');
+            photosContainer.innerHTML = '';
+            
+            const photos = galleryData[eventName] || [];
+            if(photos.length === 0) {
+                photosContainer.innerHTML = '<div style="width: 100%; text-align: center; color: #666; font-size: 1.1rem; grid-column: 1 / -1; padding: 40px;">No photos uploaded to this event yet.</div>';
+            }
+
+            photos.forEach((photoPath, index) => {
+                const imgWrap = document.createElement('div');
+                imgWrap.className = 'photo-item fade-up-element visible';
+                imgWrap.style.animationDelay = `${index * 0.05}s`;
+                imgWrap.onclick = () => openLightbox(photoPath);
+                
+                const img = document.createElement('img');
+                img.src = photoPath;
+                img.alt = eventName;
+                img.loading = 'lazy';
+                
+                imgWrap.appendChild(img);
+                photosContainer.appendChild(imgWrap);
+            });
+        }
+
+        function closeFolder() {
+            document.getElementById('gallery-photos').classList.add('hidden');
+            document.getElementById('gallery-folders').classList.remove('hidden');
+        }
+
+        function openLightbox(src) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = src;
+            lightbox.classList.remove('hidden');
+            
+            // Prevent scrolling on body when lightbox is open
+            document.body.style.overflow = 'hidden';
+            
+            // Add slight fade in for image
+            lightboxImg.style.opacity = '0';
+            setTimeout(() => lightboxImg.style.opacity = '1', 50);
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.add('hidden');
+            document.getElementById('lightbox-img').src = '';
+            document.body.style.overflow = '';
+        }
+
+        // Close lightbox on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>

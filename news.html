@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News & Updates - Carmel Garden Matriculation Higher Secondary School</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Bootstrap dependencies for Carousel -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-inner">
+            <div class="contact-info">
+                <span><i class="fa-solid fa-phone"></i> +91 82200 59980</span>
+                <span><i class="fa-solid fa-envelope"></i> admin@carmelgarden.edu.in</span>
+            </div>
+            <div class="top-links">
+                <a href="alumni.html">Our Alumni</a>
+                <a href="news.html">News</a>
+                <a href="about.html#faq">FAQ</a>
+                <a href="admin.html" class="login-btn">Admin Login <i class="fa-solid fa-lock"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar">
+        <div class="container nav-inner">
+            <div class="logo">
+                <a href="index.html" style="display: flex; align-items: center; gap: 10px;">
+                    <img src="images/logo.jpeg" alt="Logo" style="height: 40px;">
+                    <h1 id="cms-brand-name">Carmel Garden</h1>
+                </a>
+            </div>
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="about.html">About Us <i class="fa-solid fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="about.html#vision">Vision & Mission</a></li>
+                        <li><a href="about.html#message">Correspondent&Principal Desk</a></li>
+                        <li><a href="about.html#history">History</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="academics.html">Academics <i class="fa-solid fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="academics.html#montessori">Montessori Method</a></li>
+                        <li><a href="academics.html#pedagogy">Pedagogy</a></li>
+                    </ul>
+                </li>
+                <li><a href="facilities.html">Facilities</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="alumni.html">Proud Alumni</a></li>
+                <li><a href="news.html" class="active">News</a></li>
+                <li><a href="apply.html" class="btn btn-primary">Apply Now</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- News Ticker directly below navbar -->
+    <div class="ticker-wrap" style="position: relative; z-index: 10;">
+        <div class="ticker-label"><i class="fa-solid fa-bell me-2"></i>New Updates</div>
+        <div class="ticker-track">
+            <span>
+                &nbsp;&nbsp;•&nbsp; Admissions Open 2025–26 – Apply Now! &nbsp;&nbsp;•&nbsp;
+                Annual Day 2024–25: "Festivals Around The World" – Watch the highlights! &nbsp;&nbsp;•&nbsp;
+                New Mini Auditorium Inauguration is Live! &nbsp;&nbsp;•&nbsp;
+                Tamil Academy Video is Out Now! &nbsp;&nbsp;•&nbsp;
+                Maths Academy Video is Out Now! &nbsp;&nbsp;•&nbsp;
+                Board Results 2025: 100% Pass – Congratulations! &nbsp;&nbsp;•&nbsp;
+                ESC Programme running perfectly – Enroll today! &nbsp;&nbsp;•&nbsp;
+            </span>
+        </div>
+    </div>
+
+    <!-- 100vh Hero Section -->
+    <div class="page-hero" style="background-image: url('images/annual.jpg'); min-height: calc(100vh - 170px);">
+        <div class="page-hero-content fade-up-element visible">
+            <h1 class="page-hero-title">School News</h1>
+            <p class="page-hero-subtitle">Latest Updates & Events</p>
+        </div>
+    </div>
+
+    <!-- ══ NEW UPDATES CAROUSEL ═══════════════════════════════════ -->
+    <section class="updates-sec" id="updates">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-end mb-4 flex-wrap" style="display:flex; justify-content:space-between; align-items:flex-end; gap:12px;">
+                <div>
+                    <span class="sec-tag">School Updates</span>
+                    <h2 class="sec-title mt-1 mb-0">New Updates</h2>
+                </div>
+            </div>
+            
+            <div id="updCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row g-4" style="display: flex; flex-wrap: wrap; gap: 30px;">
+                            <div class="col-md-4 fade-up-element" style="flex: 1; min-width: 250px;"><div class="upd-card h-100"><div class="upd-img" style="background:linear-gradient(135deg,#ffe0f3,#ffd0e8);">🎭</div><div class="upd-body"><span class="upd-tag">Annual Day</span><h5>Annual Day 2024–25</h5><p>Theme: Festivals Around The World — a spectacular evening of talent and culture.</p><a href="gallery.html" class="view-more">View Gallery &nbsp;<i class="fa-solid fa-arrow-right"></i></a></div></div></div>
+                            <div class="col-md-4 fade-up-element" style="flex: 1; min-width: 250px;"><div class="upd-card h-100"><div class="upd-img" style="background:linear-gradient(135deg,#d0e8ff,#c0d8f0);">🏛️</div><div class="upd-body"><span class="upd-tag">Infrastructure</span><h5>Mini Auditorium Inauguration</h5><p>Our brand new mini auditorium has been inaugurated — a world-class venue for events.</p><a href="#" class="view-more">Read More &nbsp;<i class="fa-solid fa-arrow-right"></i></a></div></div></div>
+                            <div class="col-md-4 fade-up-element" style="flex: 1; min-width: 250px;"><div class="upd-card h-100"><div class="upd-img" style="background:linear-gradient(135deg,#e0f8e0,#d0f0d0);">📖</div><div class="upd-body"><span class="upd-tag">Co-Curriculum</span><h5>ESC Programme Running</h5><p>Extended School Concept is going perfectly with enthusiastic student participation.</p><a href="academics.html" class="view-more">Learn More &nbsp;<i class="fa-solid fa-arrow-right"></i></a></div></div></div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row g-4" style="display: flex; flex-wrap: wrap; gap: 30px;">
+                            <div class="col-md-4" style="flex: 1; min-width: 250px;"><div class="upd-card h-100"><div class="upd-img" style="background:linear-gradient(135deg,#fff0d0,#ffe0b0);">🏅</div><div class="upd-body"><span class="upd-tag">Achievement</span><h5>Science Olympiad Winners</h5><p>Our students brought home gold at the State-Level Science Olympiad 2025.</p><a href="#" class="view-more">Read More &nbsp;<i class="fa-solid fa-arrow-right"></i></a></div></div></div>
+                            <div class="col-md-4" style="flex: 1; min-width: 250px;"><div class="upd-card h-100"><div class="upd-img" style="background:linear-gradient(135deg,#f0d0ff,#e0c0f0);">🌐</div><div class="upd-body"><span class="upd-tag">Language Academy</span><h5>Tamil Academy Video Out</h5><p>Our Tamil Academy's latest session video is now live — watch and learn!</p><a href="#" class="view-more">Watch Now &nbsp;<i class="fa-solid fa-arrow-right"></i></a></div></div></div>
+                            <div class="col-md-4" style="flex: 1; min-width: 250px;"><div class="upd-card h-100"><div class="upd-img" style="background:linear-gradient(135deg,#d0fff0,#c0f0e0);">🤝</div><div class="upd-body"><span class="upd-tag">Community</span><h5>Service Drive 2025</h5><p>Students led a neighbourhood clean-up and food donation drive — living the Motto!</p><a href="gallery.html" class="view-more">View Photos &nbsp;<i class="fa-solid fa-arrow-right"></i></a></div></div></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Navigation UI -->
+                <div class="d-flex justify-content-center gap-2 mt-4 text-center" style="margin-top: 20px;">
+                    <button class="carousel-nav-btn mx-2" type="button" data-bs-target="#updCarousel" data-bs-slide="prev"><i class="fa-solid fa-arrow-left"></i></button>
+                    <button class="carousel-nav-btn mx-2" type="button" data-bs-target="#updCarousel" data-bs-slide="next"><i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row g-4" style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: space-between;">
+                <div class="col-lg-4 footer-brand" style="flex: 1; min-width: 250px;">
+                    <h2>Carmel Garden<span style="color:var(--pink);">.</span></h2>
+                    <p class="mt-2" style="font-size: 0.9rem; color: rgba(255,255,255,0.7); line-height: 1.8;">To be a premier school with a joyful, vibrant, caring community of innovative students, effective teachers and supportive parents — guided by Truth and Service.</p>
+                </div>
+                <div class="col-lg-3 footer-col" style="min-width: 200px;">
+                    <h4 style="color:#fff; margin-bottom: 20px; font-family:'Playfair Display', serif;">School Timings</h4>
+                    <div style="margin-bottom: 10px; color: rgba(255,255,255,0.7); font-size:0.9rem;"><i class="fa-solid fa-sun" style="color:#FFB300; margin-right: 8px;"></i> Morning : 8:30 AM to 12:00 PM</div>
+                    <div style="margin-bottom: 10px; color: rgba(255,255,255,0.7); font-size:0.9rem;"><i class="fa-solid fa-utensils" style="color:#FFB300; margin-right: 8px;"></i> Lunch : 12:00 PM to 12:30 PM</div>
+                    <div style="color: rgba(255,255,255,0.7); font-size:0.9rem;"><i class="fa-solid fa-moon" style="color:#FFB300; margin-right: 8px;"></i> Afternoon : 12:30 PM to 3:20 PM</div>
+                </div>
+                <div class="col-lg-3 footer-col" style="min-width: 200px;">
+                    <h4 style="color:#fff; margin-bottom: 20px; font-family:'Playfair Display', serif;">Contact Us</h4>
+                    <div style="margin-bottom: 10px; color: rgba(255,255,255,0.7); font-size:0.9rem;"><i class="fa-solid fa-phone" style="width:20px;"></i> +91 98765 43210</div>
+                    <div style="margin-bottom: 10px; color: rgba(255,255,255,0.7); font-size:0.9rem;"><i class="fa-solid fa-envelope" style="width:20px;"></i> info@carmelgarden.edu.in</div>
+                    <div style="color: rgba(255,255,255,0.7); font-size:0.9rem;"><i class="fa-solid fa-location-dot" style="width:20px;"></i> Coimbatore, Tamil Nadu</div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom" style="border-top: 1px solid rgba(255,255,255,0.1); margin-top: 40px; padding-top: 20px;">
+            <div class="container" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap:10px; color: rgba(255,255,255,0.5); font-size: 0.85rem;">
+                <span>© 2025 Carmel Garden MHSS. All Rights Reserved.</span>
+                <span>Crafted with ❤️ for Carmel Garden</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>

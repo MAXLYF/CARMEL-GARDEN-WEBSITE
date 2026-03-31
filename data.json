@@ -1,0 +1,31 @@
+{
+  "texts": {
+    "cms-brand-name": "Carmel Garden<span>.</span>",
+    "cms-hero-badge": "Welcome to Carmel Garden Matriculation Higher Secondary School",
+    "cms-hero-title": "Shaping Dreams,<br>Building Futures",
+    "cms-hero-subtitle": "A joyful, vibrant, caring community of innovative students, effective teachers and supportive parents.",
+    "cms-about-title": "Why Choose Carmel Garden?",
+    "cms-about-p1": "Because education is a fun and constructive activity, wherein much thought and effort is put in by the educators to guarantee that each child is given the necessary attention to thrive and flourish as independent individuals in a fast-pacing world.",
+    "cms-about-p2": "Carmel Garden Matriculation Higher Secondary School offers a challenging environment to improve student potential and achievement in all spheres. We strive for international standards and work with an innovative approach to develop a positive self-identity in every student.",
+    "cms-lib-title": "Modern Library",
+    "cms-lib-desc": "A tranquil haven with thousands of volumes.",
+    "cms-sports-title": "Sports Complex",
+    "cms-sports-desc": "Premium sports fields and track.",
+    "cms-news": "<p><strong>Breaking:</strong> Annual Sports Meet scheduled for next month!</p><p>New robotic lab equipment has successfully arrived.</p>"
+  },
+  "images": {
+    "cms-hero-bg": "url('images/hero.png')",
+    "cms-lib-bg": "url('images/library.png')",
+    "cms-sports-bg": "url('images/sports.png')",
+    "cms-media-img1": "url('images/hero.png')"
+  },
+  "links": {
+    "cms-brochure-link": "#"
+  },
+  "faqs": {
+    "cms-faq-admission": "Admissions are currently open for the 2026 academic year. Please click the 'Apply Now' button on our menu to download the application form.",
+    "cms-faq-fees": "Our fee structure varies by grade level. Please contact admin@carmelgarden.edu.in or call +91 82200 59980 for a detailed breakdown.",
+    "cms-faq-location": "We are proudly located in Coimbatore. Find our full address at the bottom of the page."
+  },
+  "gallery": {}
+}

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin CMS - Carmel Garden</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FFB300;
+            --dark: #111;
+            --light: #f4f7f6;
+            --border: #ddd;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', sans-serif; background: var(--light); color: var(--dark); padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        h1 { text-align: center; margin-bottom: 20px; color: var(--dark); border-bottom: 2px solid var(--primary); padding-bottom: 10px; display: inline-block; }
+        h2 { margin: 30px 0 15px; font-size: 1.25rem; color: #444; }
+        .hidden { display: none !important; }
+        
+        /* Auth Form */
+        #login-section { text-align: center; padding: 40px 0; }
+        .form-group { margin-bottom: 15px; text-align: left; }
+        label { display: block; font-weight: 600; margin-bottom: 5px; font-size: 0.9rem; }
+        input[type="text"], input[type="password"], textarea {
+            width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 4px; font-family: inherit; font-size: 0.95rem;
+        }
+        button {
+            background: var(--dark); color: var(--primary); border: none; padding: 10px 20px; font-weight: 600; border-radius: 4px; cursor: pointer; transition: 0.3s;
+        }
+        button:hover { background: #333; }
+        
+        textarea { height: 100px; resize: vertical; }
+
+        /* Dashboard */
+        .dash-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 20px; }
+        .card { border: 1px solid var(--border); padding: 20px; margin-bottom: 20px; border-radius: 6px; }
+        .success-msg { color: green; font-weight: 600; text-align: center; margin-bottom: 15px; display: none; }
+        .error-msg { color: red; font-weight: 600; text-align: center; margin-bottom: 15px; display: none; }
+        
+        .upload-row { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; }
+        .upload-row input[type="file"] { flex: 1; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div style="text-align: center"><h1 id="page-title">Admin Login</h1></div>
+
+    <div id="msg-box" class="success-msg">Saved!</div>
+    <div id="err-box" class="error-msg">Error!</div>
+
+    <!-- Login Form -->
+    <div id="login-section">
+        <div style="max-width: 300px; margin: 0 auto;">
+            <div class="form-group">
+                <label>Username (admin)</label>
+                <input type="text" id="username" value="admin">
+            </div>
+            <div class="form-group">
+                <label>Password (admin123)</label>
+                <input type="password" id="password" value="admin123">
+            </div>
+            <button onclick="login()">Log In</button>
+        </div>
+    </div>
+
+    <!-- CMS Dashboard -->
+    <div id="dashboard-section" class="hidden">
+        <div class="dash-header">
+            <p>Welcome, <strong>Admin</strong>. Any changes saved here will immediately reflect on the live website.</p>
+            <button onclick="logout()">Logout</button>
+        </div>
+        
+        <div class="card">
+            <h2>Website Texts</h2>
+            <div class="form-group">
+                <label>Hero Title (HTML supported)</label>
+                <input type="text" id="cms-hero-title">
+            </div>
+            <div class="form-group">
+                <label>Hero Subtitle</label>
+                <input type="text" id="cms-hero-subtitle">
+            </div>
+            <div class="form-group">
+                <label>About Us - Paragraph 1</label>
+                <textarea id="cms-about-p1"></textarea>
+            </div>
+            <div class="form-group">
+                <label>About Us - Paragraph 2</label>
+                <textarea id="cms-about-p2"></textarea>
+            </div>
+            <button onclick="saveTexts()">Save Text Changes</button>
+        </div>
+
+        <div class="card">
+            <h2>School News</h2>
+            <div class="form-group">
+                <label>Latest News (HTML supported)</label>
+                <textarea id="cms-news" style="height: 150px;"></textarea>
+            </div>
+            <button onclick="saveTexts()">Save News</button>
+        </div>
+
+        <div class="card">
+            <h2>Media & Brochure Uploads</h2>
+            <div class="upload-row">
+                <label style="width: 120px;">In Media Image:</label>
+                <input type="file" id="upload-media1" accept="image/*">
+                <button onclick="uploadImage('upload-media1', 'cms-media-img1')">Upload Image</button>
+            </div>
+            <div class="upload-row">
+                <label style="width: 120px;">Online Brochure (PDF):</label>
+                <input type="file" id="upload-brochure" accept="application/pdf">
+                <button onclick="uploadBrochure('upload-brochure', 'cms-brochure-link')">Upload PDF</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Chatbot FAQ Manager</h2>
+            <p style="margin-bottom:15px; font-size: 0.9rem; color: #555;">These are the exact automated answers the Live Chatbox will give when a parent asks about these topics.</p>
+            <div class="form-group">
+                <label>Admission Answer</label>
+                <textarea id="cms-faq-admission" style="height: 60px;"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Fees Answer</label>
+                <textarea id="cms-faq-fees" style="height: 60px;"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Location Answer</label>
+                <textarea id="cms-faq-location" style="height: 60px;"></textarea>
+            </div>
+            <button onclick="saveFaqs()">Save Chatbot FAQs</button>
+        </div>
+
+        <div class="card">
+            <h2>Hero Background Image</h2>
+            <div class="upload-row">
+                <input type="file" id="upload-hero" accept="image/*">
+                <button onclick="uploadImage('upload-hero', 'cms-hero-bg')">Upload Image</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Facilities Images</h2>
+            <div class="upload-row">
+                <label style="width: 100px;">Library:</label>
+                <input type="file" id="upload-lib" accept="image/*">
+                <button onclick="uploadImage('upload-lib', 'cms-lib-bg')">Upload Image</button>
+            </div>
+            <div class="upload-row">
+                <label style="width: 100px;">Sports:</label>
+                <input type="file" id="upload-sports" accept="image/*">
+                <button onclick="uploadImage('upload-sports', 'cms-sports-bg')">Upload Image</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Gallery Manager</h2>
+            <p style="margin-bottom:15px; font-size: 0.9rem; color: #555;">Upload photos to an event folder. If the event does not exist, it will be created automatically.</p>
+            <div class="form-group" style="margin-bottom: 20px;">
+                <label>Event Name (e.g., Annual Day 2024)</label>
+                <input type="text" id="gallery-event-name" placeholder="Enter Event Name">
+            </div>
+            <div class="upload-row">
+                <input type="file" id="upload-gallery-file" accept="image/*">
+                <button onclick="uploadGalleryImage()">Upload to Gallery</button>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="/" target="_blank" style="color:var(--dark); font-weight: 600;">Back to Live Website &rarr;</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Show/Hide Messages
+    const showMsg = (msg, isError = false) => {
+        const box = document.getElementById(isError ? 'err-box' : 'msg-box');
+        box.innerText = msg;
+        box.style.display = 'block';
+        setTimeout(() => box.style.display = 'none', 3000);
+    }
+
+    // Check auth on load
+    fetch('/api/check-session').then(r => r.json()).then(res => {
+        if(res.loggedIn) showDashboard();
+    });
+
+    // Login
+    const login = async () => {
+        const u = document.getElementById('username').value;
+        const p = document.getElementById('password').value;
+        const res = await fetch('/api/login', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({username: u, password: p})
+        });
+        const data = await res.json();
+        if(data.success) {
+            showDashboard();
+        } else {
+            showMsg('Invalid credentials', true);
+        }
+    }
+
+    // Logout
+    const logout = async () => {
+        await fetch('/api/logout', {method: 'POST'});
+        document.getElementById('login-section').classList.remove('hidden');
+        document.getElementById('dashboard-section').classList.add('hidden');
+        document.getElementById('page-title').innerText = 'Admin Login';
+    }
+
+    // Load Dashboard
+    const showDashboard = () => {
+        document.getElementById('login-section').classList.add('hidden');
+        document.getElementById('dashboard-section').classList.remove('hidden');
+        document.getElementById('page-title').innerText = 'CMS Dashboard';
+        loadContent();
+    }
+
+    // Load Content into inputs
+    const loadContent = async () => {
+        const res = await fetch('/api/content');
+        const data = await res.json();
+        
+        // Populate inputs
+        const keys = ['cms-hero-title', 'cms-hero-subtitle', 'cms-about-p1', 'cms-about-p2', 'cms-news'];
+        keys.forEach(k => {
+            if(document.getElementById(k) && data.texts && data.texts[k] !== undefined) {
+                document.getElementById(k).value = data.texts[k];
+            }
+        });
+        
+        // Populate FAQs
+        const faqKeys = ['cms-faq-admission', 'cms-faq-fees', 'cms-faq-location'];
+        faqKeys.forEach(k => {
+            if(document.getElementById(k) && data.faqs && data.faqs[k] !== undefined) {
+                document.getElementById(k).value = data.faqs[k];
+            }
+        });
+    }
+
+    // Save Chatbot FAQs
+    const saveFaqs = async () => {
+        const payload = { faqs: {} };
+        const keys = ['cms-faq-admission', 'cms-faq-fees', 'cms-faq-location'];
+        keys.forEach(k => {
+            if(document.getElementById(k)) payload.faqs[k] = document.getElementById(k).value;
+        });
+        
+        const res = await fetch('/api/content', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(payload)
+        });
+        if(res.ok) showMsg('Chatbot URLs/FAQs saved successfully!');
+        else showMsg('Failed to save FAQs', true);
+    }
+
+    // Save Texts
+    const saveTexts = async () => {
+        const payload = { texts: {} };
+        const keys = ['cms-hero-title', 'cms-hero-subtitle', 'cms-about-p1', 'cms-about-p2', 'cms-news'];
+        keys.forEach(k => {
+            if(document.getElementById(k)) payload.texts[k] = document.getElementById(k).value;
+        });
+        
+        const res = await fetch('/api/content', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(payload)
+        });
+        if(res.ok) showMsg('Text changes saved successfully!');
+        else showMsg('Failed to save texts', true);
+    }
+
+    // Upload Image
+    const uploadImage = async (inputId, imageKey) => {
+        const fileInput = document.getElementById(inputId);
+        if(!fileInput.files[0]) return showMsg('Please select an image file first', true);
+
+        const formData = new FormData();
+        formData.append('image', fileInput.files[0]);
+        formData.append('imageKey', imageKey);
+
+        const res = await fetch('/api/upload', {
+            method: 'POST',
+            body: formData
+        });
+
+        if(res.ok) {
+            showMsg('Image uploaded and applied!');
+            fileInput.value = ''; // clear input
+        } else {
+            showMsg('Image Upload failed', true);
+        }
+    }
+
+    // Upload Brochure
+    const uploadBrochure = async (inputId, linkKey) => {
+        const fileInput = document.getElementById(inputId);
+        if(!fileInput.files[0]) return showMsg('Please select a PDF file first', true);
+
+        const formData = new FormData();
+        formData.append('brochure', fileInput.files[0]);
+        formData.append('linkKey', linkKey);
+
+        const res = await fetch('/api/upload-brochure', {
+            method: 'POST',
+            body: formData
+        });
+
+        if(res.ok) {
+            showMsg('Brochure PDF uploaded successfully!');
+            fileInput.value = ''; // clear input
+        } else {
+            showMsg('Brochure Upload failed', true);
+        }
+    }
+    // Upload Gallery Image
+    const uploadGalleryImage = async () => {
+        const eventName = document.getElementById('gallery-event-name').value.trim();
+        if (!eventName) return showMsg('Please enter an event name', true);
+
+        const fileInput = document.getElementById('upload-gallery-file');
+        if(!fileInput.files[0]) return showMsg('Please select an image file first', true);
+
+        const formData = new FormData();
+        formData.append('eventName', eventName);
+        formData.append('image', fileInput.files[0]);
+
+        const res = await fetch('/api/upload-gallery', {
+            method: 'POST',
+            body: formData
+        });
+
+        const data = await res.json();
+        
+        if(res.ok) {
+            showMsg(data.message || 'Image uploaded to gallery successfully!');
+            fileInput.value = ''; // clear input
+        } else {
+            showMsg(data.error || 'Gallery Upload failed', true);
+        }
+    }
+</script>
+</body>
+</html>
